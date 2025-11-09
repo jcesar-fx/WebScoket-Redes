@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket.Redes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.min.js" integrity="sha512-8ExARjWWkIllMlNzVg7JKq9RKWPlJABQUNq6YvAjE/HobctjH/NA+bSiDMDvouBVjp4Wwnf1VP1OEv7Zgjtuxw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js" defer></script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="column">
+            <form id="form">
+                <input type="text" id="messageInput" placeholder="Type your message here..." autocomplete="off" required />
+                <button type="submit">Send</button>
+            </form>
+            <ul></ul>
+        </div>
+        <div class="column">
+            <h1>Seu batalhão:</h1>
+            <div class="parent">
+                <div id="seuA1">A1</div>
+                <div id="seuA2">A2</div>
+                <div id="seuA3">A3</div>
+                <div id="seuA4">A4</div>
+                <div id="seuA5">A5</div>
+                <div id="seuA6">A6</div>
+                <div id="seuA7">A7</div>
+                <div id="seuA8">A8</div>
+                <div id="seuA9">A9</div>
+                <div id="seuA10">A10</div>
+
+                <div id="seuD1">D1</div>
+                <div id="seuD2">D2</div>
+                <div id="seuD3">D3</div>
+                <div id="seuD4">D4</div>
+                <div id="seuD5">D5</div>
+                <div id="seuD6">D6</div>
+                <div id="seuD7">D7</div>
+                <div id="seuD8">D8</div>
+                <div id="seuD9">D9</div>
+                <div id="seuD10">D10</div>
+
+                <div id="seuE1">E1</div>
+                <div id="seuE2">E2</div>
+                <div id="seuE3">E3</div>
+                <div id="seuE4">E4</div>
+                <div id="seuE5">E5</div>
+                <div id="seuE6">E6</div>
+                <div id="seuE7">E7</div>
+                <div id="seuE8">E8</div>
+                <div id="seuE9">E9</div>
+                <div id="seuE10">E10</div>
+
+                <div id="seuF1">F1</div>
+                <div id="seuF2">F2</div>
+                <div id="seuF3">F3</div>
+                <div id="seuF4">F4</div>
+                <div id="seuF5">F5</div>
+                <div id="seuF6">F6</div>
+                <div id="seuF7">F7</div>
+                <div id="seuF8">F8</div>
+                <div id="seuF9">F9</div>
+                <div id="seuF10">F10</div>
+
+                <div id="seuG1">G1</div>
+                <div id="seuG2">G2</div>
+                <div id="seuG3">G3</div>
+                <div id="seuG4">G4</div>
+                <div id="seuG5">G5</div>
+                <div id="seuG6">G6</div>
+                <div id="seuG7">G7</div>
+                <div id="seuG8">G8</div>
+                <div id="seuG9">G9</div>
+                <div id="seuG10">G10</div>
+
+                <div id="seuH1">H1</div>
+                <div id="seuH2">H2</div>
+                <div id="seuH3">H3</div>
+                <div id="seuH4">H4</div>
+                <div id="seuH5">H5</div>
+                <div id="seuH6">H6</div>
+                <div id="seuH7">H7</div>
+                <div id="seuH8">H8</div>
+                <div id="seuH9">H9</div>
+                <div id="seuH10">H10</div>
+
+                <div id="seuI1">I1</div>
+                <div id="seuI2">I2</div>
+                <div id="seuI3">I3</div>
+                <div id="seuI4">I4</div>
+                <div id="seuI5">I5</div>
+                <div id="seuI6">I6</div>
+                <div id="seuI7">I7</div>
+                <div id="seuI8">I8</div>
+                <div id="seuI9">I9</div>
+                <div id="seuI10">I10</div>
+
+                <div id="seuJ1">J1</div>
+                <div id="seuJ2">J2</div>
+                <div id="seuJ3">J3</div>
+                <div id="seuJ4">J4</div>
+                <div id="seuJ5">J5</div>
+                <div id="seuJ6">J6</div>
+                <div id="seuJ7">J7</div>
+                <div id="seuJ8">J8</div>
+                <div id="seuJ9">J9</div>
+                <div id="seuJ10">J10</div>
+            </div>
+            <h1>Batalhão de seu inimigo:</h1>
+            <div class="parent">
+                <div id="inimigoA1">A1</div>
+                <div id="inimigoA2">A2</div>
+                <div id="inimigoA3">A3</div>
+                <div id="inimigoA4">A4</div>
+                <div id="inimigoA5">A5</div>
+                <div id="inimigoA6">A6</div>
+                <div id="inimigoA7">A7</div>
+                <div id="inimigoA8">A8</div>
+                <div id="inimigoA9">A9</div>
+                <div id="inimigoA10">A10</div>
+
+                <div id="inimigoD1">D1</div>
+                <div id="inimigoD2">D2</div>
+                <div id="inimigoD3">D3</div>
+                <div id="inimigoD4">D4</div>
+                <div id="inimigoD5">D5</div>
+                <div id="inimigoD6">D6</div>
+                <div id="inimigoD7">D7</div>
+                <div id="inimigoD8">D8</div>
+                <div id="inimigoD9">D9</div>
+                <div id="inimigoD10">D10</div>
+
+                <div id="inimigoE1">E1</div>
+                <div id="inimigoE2">E2</div>
+                <div id="inimigoE3">E3</div>
+                <div id="inimigoE4">E4</div>
+                <div id="inimigoE5">E5</div>
+                <div id="inimigoE6">E6</div>
+                <div id="inimigoE7">E7</div>
+                <div id="inimigoE8">E8</div>
+                <div id="inimigoE9">E9</div>
+                <div id="inimigoE10">E10</div>
+
+                <div id="inimigoF1">F1</div>
+                <div id="inimigoF2">F2</div>
+                <div id="inimigoF3">F3</div>
+                <div id="inimigoF4">F4</div>
+                <div id="inimigoF5">F5</div>
+                <div id="inimigoF6">F6</div>
+                <div id="inimigoF7">F7</div>
+                <div id="inimigoF8">F8</div>
+                <div id="inimigoF9">F9</div>
+                <div id="inimigoF10">F10</div>
+
+                <div id="inimigoG1">G1</div>
+                <div id="inimigoG2">G2</div>
+                <div id="inimigoG3">G3</div>
+                <div id="inimigoG4">G4</div>
+                <div id="inimigoG5">G5</div>
+                <div id="inimigoG6">G6</div>
+                <div id="inimigoG7">G7</div>
+                <div id="inimigoG8">G8</div>
+                <div id="inimigoG9">G9</div>
+                <div id="inimigoG10">G10</div>
+
+                <div id="inimigoH1">H1</div>
+                <div id="inimigoH2">H2</div>
+                <div id="inimigoH3">H3</div>
+                <div id="inimigoH4">H4</div>
+                <div id="inimigoH5">H5</div>
+                <div id="inimigoH6">H6</div>
+                <div id="inimigoH7">H7</div>
+                <div id="inimigoH8">H8</div>
+                <div id="inimigoH9">H9</div>
+                <div id="inimigoH10">H10</div>
+
+                <div id="inimigoI1">I1</div>
+                <div id="inimigoI2">I2</div>
+                <div id="inimigoI3">I3</div>
+                <div id="inimigoI4">I4</div>
+                <div id="inimigoI5">I5</div>
+                <div id="inimigoI6">I6</div>
+                <div id="inimigoI7">I7</div>
+                <div id="inimigoI8">I8</div>
+                <div id="inimigoI9">I9</div>
+                <div id="inimigoI10">I10</div>
+
+                <div id="inimigoJ1">J1</div>
+                <div id="inimigoJ2">J2</div>
+                <div id="inimigoJ3">J3</div>
+                <div id="inimigoJ4">J4</div>
+                <div id="inimigoJ5">J5</div>
+                <div id="inimigoJ6">J6</div>
+                <div id="inimigoJ7">J7</div>
+                <div id="inimigoJ8">J8</div>
+                <div id="inimigoJ9">J9</div>
+                <div id="inimigoJ10">J10</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
