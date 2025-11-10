@@ -2,8 +2,10 @@ import { createServer } from "http"
 import { Server } from "socket.io"
 
 
-const httpServer = createServer()
+const httpServer = createServer() //cria um server http
 
+
+// instancia o websocket no server http
 const io = new Server(httpServer, {
   cors: {
     /* esse origin, define que apenas quem acessa pelo liveserver vai ter acesso. para acesso sem restrição de qualquer origin use: origin: "*" */
@@ -13,15 +15,15 @@ const io = new Server(httpServer, {
 })
 
 
-/* aqui é onde trata a conecção de um novo user, e toda mesagem dele é emitida a todos no "socket" */
+/* aqui é onde trata a conexão de um novo user, e toda mesagem dele é emitida a todos no "socket" */
 
 io.on('connection', socket => {
   console.log(`User ${socket.id} connected`)
 
   socket.on('message', data => {
   io.emit('message', {
-    id: socket.id,
-    text: data
+    id: socket.id, // id do usuario
+    text: data // sua mensagem
   });
 });
 })
